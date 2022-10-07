@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "types": "libs/types",
+    "werewolf-ui": "apps/werewolf-ui",
+    "werewolf-ui-e2e": "apps/werewolf-ui-e2e"
+  }
+}

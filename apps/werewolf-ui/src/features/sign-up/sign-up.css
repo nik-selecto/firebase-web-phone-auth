@@ -1,0 +1,8 @@
+input {
+    font-size: 200%;
+}
+
+textarea {
+    width: 500px;
+    height: 140px;
+}
