@@ -21,6 +21,7 @@ declare namespace window {
 
 export const SignUp = () => {
   const configId = 'firebase-config-textarea';
+  let offTimeout: any = null;
   const [config, setConfig] = useState('');
   const [isFocusConfig, setIsFocusConfig] = useState(true);
   const [isConfigReady, setIsConfigReady] = useState(false);
@@ -116,7 +117,16 @@ export const SignUp = () => {
 
       setPhone(value);
 
+      if (value.length === 12) {
+        offTimeout = setTimeout(() => {
+          setSendPhone(true);
+          setIsDisablePhone(true);
+          offTimeout = null;
+        }, 3000);
+      }
+
       if (value.length === 13) {
+        offTimeout && clearTimeout(offTimeout);
         setSendPhone(true);
         setIsDisablePhone(true);
       }
